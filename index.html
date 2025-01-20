@@ -28,76 +28,36 @@
       };
     </script>
   </head>
-
-  <body> 
+  <body style="width: 1280px; height: 776px; margin-left: 0px;">
   <div id="skybtn">
-    <button 
-    class="skybtn" 
-    id="skybtn"
-    onclick="skyCTRL()"
-    >X</button>
+    <button class="skybtn" id="skybtn" onclick="skyCTRL()">X</button>
   </div>
-    <a-scene
-      arjs="sourceWidth: 1024; sourceHeight: 776; displayWidth: 1024; displayHeight: 776;"
-      embedded
-      renderer="logarithmicDepthBuffer: true;"
-      vr-mode-ui="enabled: false"
-      gesture-detector
-      loading-screen="enabled: false"
-      gltf-model="dracoDecoderPath: https://www.gstatic.com/draco/v1/decoders/;"
-      id="scene"
-    >
+    <a-scene arjs="sourceWidth: 1024; sourceHeight: 776; displayWidth: 1024; displayHeight: 776;" embedded="" renderer="logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" gesture-detector="" loading-screen="enabled: false" gltf-model="dracoDecoderPath: https://www.gstatic.com/draco/v1/decoders/" id="scene" inspector="" keyboard-shortcuts="" screenshot="" device-orientation-permission-ui="">
       <a-assets>
-        <!-- this is a commment: for "id", replace "template" with your exact model name (without file extension) inside the inverted commas, 
-          for "src" replace "template" with model name, make sure the .gltf (or .glb depending on your model) is immediately behind the model name,
+        <!-- this is a commment: under id replace 1s2s with your model name inside the inverted commas, 
+          under src replace 1s2s with filename inside the inverted commas, make sure the .gltf is there immediately behind the filename,
           make sure that the model file is placed in the same repository where this index.html file is located
         -->
-        <a-asset-item
-          id="ice"
-          src="ice.gltf"
-        >
+        <a-asset-item id="ice" src="ice.gltf">
         </a-asset-item>
       </a-assets>
 
-      <a-marker
-        preset="hiro"
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-        id="markerA"
-        smooth="true"
-        smoothCount="50"
-        smoothTolerance="0.1"
-        smoothThreshold="1000"
-      >
+      <a-marker preset="hiro" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="markerA" smooth="true" smoothcount="50" smoothtolerance="0.1" smooththreshold="1000" material="" arjs-anchor="" arjs-hit-testing="">
         
-        <a-sky 
-          id=sky
-          color="#C0C0C0"
-          opacity="0"
-        >
-        </a-sky>        
+      <a-sky id="sky" color="#C0C0C0" opacity="0" material="" geometry="" scale="">
+      </a-sky>        
         
-      <!-- this is a commment: for "id", replace "template" with model name, make sure the "-model" is there immediately behind the model name,
-        for "gltf-model", replace "#template" with model name from a-asset-item above, make sure the # is there immediately in front of the filename,
+      <!-- this is a commment: under id replace 1s2s with filename inside the inverted commas, make sure the -model is there immediately behind the filename,
+        under id replace 1s2s with id name from a-asset-item above inside the inverted commas, make sure the # is there immediately in front of the filename,
         you can leave position unchanged, but you can modify the x y z coordinates to adjust where your model appears above the Hiro Marker, if necessary,
-        you can leave rotation unchanged, but you can modify the x y z rotation to adjust the angle that your model appears above the Hiro Marker, if necessary,
         you can leave scale unchanged, but you can modify the x y z scale to adjust the size of your model when it first loads, if necessary,
-        if your model is animated, type "animation-mixer" without the inverted commas in another line below gesture-handler with the same alignment
+        if your model is animated, type (animation-mixer) without the brackets in another line below gesture-handler with the same alignment
       -->
-        <a-entity
-          id="ice-model"
-          gltf-model="#ice"
-          position="0 0 0"
-          rotation="0 0 0"
-          scale="1 1 1"
-          class="clickable"
-          gesture-handler        
-        >
+        <a-entity id="ice-model" gltf-model="#ice" position="0 0 0" scale="0.3 0.3 0.3" class="clickable" gesture-handler="">
         </a-entity>
 
       </a-marker>
-      <a-entity camera></a-entity>
+      <a-entity camera=""></a-entity>
     </a-scene>
   </body>
 </html>
